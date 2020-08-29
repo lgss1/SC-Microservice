@@ -1,0 +1,40 @@
+server:
+  port: 8761
+  
+spring:
+   application:
+      name: server
+
+eureka:
+   instance:
+     hostname: es1g1
+   client:
+      registerWithEureka: true
+      fetchRegistry: true
+      serviceUrl:
+         defaultZone: http://es1g2:7999/eureka,http://es1g3:7998/eureka
+      server:
+         enable-self-preservation: false
+      
+---
+spring:
+   profiles: server1
+server:
+   port: 7999
+eureka:
+   instance:
+      hostname: es1g2
+   client:
+      serviceUrl:
+         defaultZone: http://es1g1:8761/eureka,http://es1g3:7998/eureka
+---
+spring:
+   profiles: server2
+server:
+   port: 7998
+eureka:
+   instance:
+      hostname: es1g3
+   client:
+      serviceUrl:
+         defaultZone: http://es1g2:7999/eureka,http://es1g1:8761/eureka
