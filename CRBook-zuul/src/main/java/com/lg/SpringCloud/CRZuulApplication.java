@@ -16,10 +16,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 //服务降级注解
 @EnableCircuitBreaker
 @SpringBootApplication
-public class EurekaApplication implements WebMvcConfigurer{
+public class CRZuulApplication implements WebMvcConfigurer{
 
 	public static void main(String[] args) {
-		SpringApplication.run(EurekaApplication.class, args);
+		SpringApplication.run(CRZuulApplication.class, args);
 	}
 	@LoadBalanced
 	@Bean
