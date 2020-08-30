@@ -1,5 +1,6 @@
-package com.lg.SpringCloud;
+package com.lg.CRUser;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -16,10 +17,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 //服务降级注解
 @EnableCircuitBreaker
 @SpringBootApplication
-public class EurekaApplication implements WebMvcConfigurer{
+@MapperScan("com.lg.crbook.dao")
+public class CRUserApplication implements WebMvcConfigurer{
 
 	public static void main(String[] args) {
-		SpringApplication.run(EurekaApplication.class, args);
+		SpringApplication.run(CRUserApplication.class, args);
 	}
 	@LoadBalanced
 	@Bean

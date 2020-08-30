@@ -6,7 +6,7 @@ spring:
     name: CRBook
 
   datasource:
-    url: jdbc:mysql://127.0.0.1/damaisc?serverTimezone=UTC&CharacterEncoding=UTF-8&useSSL=false
+    url: jdbc:mysql://127.0.0.1/crbook?serverTimezone=UTC&CharacterEncoding=UTF-8&useSSL=false
     username: root
     password: a
     driver-class-name: com.mysql.jdbc.Driver 

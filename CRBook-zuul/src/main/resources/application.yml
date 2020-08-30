@@ -5,8 +5,15 @@ spring:
   application:
     name: CRZuul
 
-# 解决 zuul 网关报错的问题
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+# zuul连接超时配置      
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
 ribbon:
   ConnectTimeout: 3000
   ReadTimeout: 60000
+       

@@ -1,8 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.lg</groupId>
   <artifactId>CRBook-parent2</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   
    <parent>
@@ -40,14 +38,6 @@
 			<groupId>org.springframework.session</groupId>
 			<artifactId>spring-session-data-redis</artifactId>
 		</dependency>
-
-		<!-- 分页查询 -->
-		<dependency>
-			<groupId>com.github.pagehelper</groupId>
-			<artifactId>pagehelper-spring-boot-starter</artifactId>
-			<version>1.2.13</version>
-		</dependency>
-
 		<!-- 配置中心依赖  spring-cloud-config -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -57,7 +47,17 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-
+		<!-- 引入common工程 -->
+		<dependency>
+			<groupId>com.lg</groupId>
+			<artifactId>CRBook-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+			<!-- 引入spring-boot测试依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
 	</dependencies>
 	
 </project>
