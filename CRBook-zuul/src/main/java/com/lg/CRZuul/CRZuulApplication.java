@@ -7,23 +7,17 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.loadbalancer.annotation.LoadBalancerClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
-@EnableEurekaClient
-//服务降级注解
-@EnableCircuitBreaker
+@EnableZuulProxy
 @SpringBootApplication
-public class CRZuulApplication implements WebMvcConfigurer{
+public class CRZuulApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CRZuulApplication.class, args);
-	}
-	@LoadBalanced
-	@Bean
-	public RestTemplate getRestTemplate() {
-		return new RestTemplate();
 	}
 }
