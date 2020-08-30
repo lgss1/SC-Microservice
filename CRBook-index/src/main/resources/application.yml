@@ -4,11 +4,4 @@ server:
 spring:
   application:
     name: CRIndex
-zuul:
-  routes:
-    base:
-      url: /simple/baidu
-      path: http://www.baidu.com
-    index:
-      url: /index/**
-      serviceId: CRIndex
+

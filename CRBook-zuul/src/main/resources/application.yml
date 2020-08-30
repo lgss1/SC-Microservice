@@ -5,6 +5,17 @@ spring:
   application:
     name: CRZuul
 
+zuul:
+  routes:
+    simple:
+      path: /simple/baidu
+      url: http://www.baidu.com
+    CRBook: /book/**
+    CRUser: /user/**
+    base:
+      path: /**
+      serviceId: CRIndex
+
 # zuul连接超时配置      
 hystrix:
   command:
